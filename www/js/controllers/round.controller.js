@@ -7,11 +7,13 @@ angular
   .module('sm.controllers')
   .controller('RoundController', RoundController);
 
-RoundController.$inject = ['roundService', '$stateParams'];
+RoundController.$inject = ['roundService', 'gamesService','$stateParams'];
 
-function RoundController(roundService, $stateParams) {
+function RoundController(roundService, gamesService, $stateParams) {
   var vm = this;
   vm.round = {};
+  vm.games = [];
+
   var getRound = function () {
     roundService.single({roundId: $stateParams.roundId}).$promise.then(function(data){
       if (data) {
@@ -20,5 +22,15 @@ function RoundController(roundService, $stateParams) {
     });
   };
 
+  var getGames = function () {
+    gamesService.getByRound({roundId: $stateParams.roundId}).$promise.then(function(data){
+      if (data.success) {
+        vm.games = data.success;
+        console.log(vm.games)
+      }
+    });
+  };
+
   getRound();
+  getGames();
 }

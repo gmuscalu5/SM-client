@@ -1,5 +1,9 @@
 <ion-view view-title="{{roundVm.round.name}}">
   <ion-content>
-    <h1>{{roundVm.round.name}}</h1>
+    <ion-list>
+      <ion-item ng-repeat="game in roundVm.games">
+        {{game.name}}
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
