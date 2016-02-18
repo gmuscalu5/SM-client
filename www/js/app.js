@@ -42,5 +42,5 @@ angular.module('sm', ['ionic', 'sm.controllers', 'ngResource'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/round/56c46ef7266da2572bbb5a97');
+  $urlRouterProvider.otherwise('/app/round/56c58c335b0d55cb39565e15');
 });

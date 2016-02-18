@@ -10,7 +10,8 @@ angular
 gamesService.$inject = ['$resource', 'config'];
 function gamesService($resource, config) {
 
-  return $resource(config.serverURL + '/api/games/round/:roundId', {}, {
-    getByRound: {method: 'GET'}
+  return $resource(config.serverURL + '/api/games/round/:dates/:roundId', {}, {
+    getByRoundAndDate: {method: 'GET'},
+    getDatesByRound: {method: 'GET', params : {dates: "dates"}}
   });
 }
