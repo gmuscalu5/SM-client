@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('sm', ['ionic', 'sm.controllers', 'ngResource'])
+angular.module('sm', ['ionic', 'sm.controllers', 'ngResource', 'ngMaterial'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -42,5 +42,5 @@ angular.module('sm', ['ionic', 'sm.controllers', 'ngResource'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/round/56c58c335b0d55cb39565e15');
+  $urlRouterProvider.otherwise('/app/round/56c5b6c494d21c1e3b05d070');
 });

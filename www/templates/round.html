@@ -1,10 +1,10 @@
 <ion-view view-title="{{roundVm.round.name}}">
   <ion-content>
-    <ion-list ng-repeat="date in roundVm.dates track by $index">
+    <md-list ng-repeat="date in roundVm.dates track by $index">
       {{date}}
-      <ion-item ng-repeat="game in roundVm.games[$index]" href="{{game.stats}}">
+      <md-list-item ng-repeat="game in roundVm.games[$index]" href="{{game.stats}}">
         {{game.name+" "+game.gym+" "+game.date}}
-      </ion-item>
-    </ion-list>
+      </md-list-item>
+    </md-list>
   </ion-content>
 </ion-view>
